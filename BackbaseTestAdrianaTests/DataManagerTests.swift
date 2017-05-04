@@ -31,7 +31,7 @@ class DataManagerTests: XCTestCase {
         DataManager.sharedInstance.addLocation(weatherLocation: locationWeather)
         
         let weatherLocation = DataManager.sharedInstance.weatherLocations["Vitoria-Gasteiz"]
-        XCTAssert((weatherLocation != nil))
+        XCTAssertNotNil(weatherLocation)
         
         
     }
@@ -53,12 +53,6 @@ class DataManagerTests: XCTestCase {
         }
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
     
 }
 

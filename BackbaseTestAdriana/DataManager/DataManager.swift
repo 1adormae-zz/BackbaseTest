@@ -44,18 +44,20 @@ class DataManager{
             completionHandler(result)
         }
     }
-    
-    func saveLocations(){
-        let locationsData = NSKeyedArchiver.archivedData(withRootObject: weatherLocations)
-        UserDefaults.standard.set(locationsData, forKey: "locations")
-    }
-    
-    func loadLocations(){
-        let locationsData = UserDefaults.standard.object(forKey: "locations") as? Data
-        
-        if let locationsData = locationsData {
-//            self.weatherLocations = NSKeyedUnarchiver.unarchiveObject(with: locationsData) as? [String:WeatherLocation]
-        }
-    }
+
+// Did not have time to refactor the data mapping for this
+//    func saveLocations(){
+//        let locationsData = NSKeyedArchiver.archivedData(withRootObject: self.weatherLocations.keys)
+//        UserDefaults.standard.set(locationsData, forKey: "locations")
+//    }
+//    
+//    func loadLocations(){
+//        let locationsData = UserDefaults.standard.object(forKey: "locations") as? Data
+//        
+//        if let locationsData = locationsData,
+//            let weatherlocations = NSKeyedUnarchiver.unarchiveObject(with: locationsData) as? [String:WeatherLocation]{
+//            self.weatherLocations = weatherlocations
+//        }
+//    }
     
 }

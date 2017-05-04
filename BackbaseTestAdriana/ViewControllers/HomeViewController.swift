@@ -16,7 +16,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataManager.sharedInstance.loadLocations()
     }
     
     override func viewWillAppear(_ animated: Bool) {

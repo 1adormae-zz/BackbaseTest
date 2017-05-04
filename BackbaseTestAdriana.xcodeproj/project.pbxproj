@@ -12,7 +12,7 @@
 		C61751681EBB15690070CB86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61751661EBB15690070CB86 /* Main.storyboard */; };
 		C617516A1EBB15690070CB86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C61751691EBB15690070CB86 /* Assets.xcassets */; };
 		C617516D1EBB15690070CB86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C617516B1EBB15690070CB86 /* LaunchScreen.storyboard */; };
-		C61751781EBB15690070CB86 /* BackbaseTestAdrianaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751771EBB15690070CB86 /* BackbaseTestAdrianaTests.swift */; };
+		C61751781EBB15690070CB86 /* DataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751771EBB15690070CB86 /* DataManagerTests.swift */; };
 		C61751861EBB162C0070CB86 /* NetworkDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751851EBB162C0070CB86 /* NetworkDataProvider.swift */; };
 		C61751881EBB166D0070CB86 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751871EBB166D0070CB86 /* Mapper.swift */; };
 		C61751921EBB1C780070CB86 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61751911EBB1C780070CB86 /* MapKit.framework */; };
@@ -26,6 +26,8 @@
 		C61751B71EBB75000070CB86 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751B61EBB75000070CB86 /* HelpViewController.swift */; };
 		C61751BB1EBB75B60070CB86 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = C61751BA1EBB75B60070CB86 /* help.html */; };
 		C61751BD1EBB80C20070CB86 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751BC1EBB80C20070CB86 /* Extensions.swift */; };
+		C61751BF1EBB86C10070CB86 /* MapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751BE1EBB86C10070CB86 /* MapperTests.swift */; };
+		C61751C11EBB87980070CB86 /* response.json in Resources */ = {isa = PBXBuildFile; fileRef = C61751C01EBB87980070CB86 /* response.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +49,7 @@
 		C617516C1EBB15690070CB86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C617516E1EBB15690070CB86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C61751731EBB15690070CB86 /* BackbaseTestAdrianaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackbaseTestAdrianaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C61751771EBB15690070CB86 /* BackbaseTestAdrianaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackbaseTestAdrianaTests.swift; sourceTree = "<group>"; };
+		C61751771EBB15690070CB86 /* DataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTests.swift; sourceTree = "<group>"; };
 		C61751791EBB15690070CB86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C61751851EBB162C0070CB86 /* NetworkDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDataProvider.swift; sourceTree = "<group>"; };
 		C61751871EBB166D0070CB86 /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 		C61751B61EBB75000070CB86 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		C61751BA1EBB75B60070CB86 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 		C61751BC1EBB80C20070CB86 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C61751BE1EBB86C10070CB86 /* MapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperTests.swift; sourceTree = "<group>"; };
+		C61751C01EBB87980070CB86 /* response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = response.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +128,10 @@
 		C61751761EBB15690070CB86 /* BackbaseTestAdrianaTests */ = {
 			isa = PBXGroup;
 			children = (
-				C61751771EBB15690070CB86 /* BackbaseTestAdrianaTests.swift */,
+				C61751C01EBB87980070CB86 /* response.json */,
+				C61751771EBB15690070CB86 /* DataManagerTests.swift */,
 				C61751791EBB15690070CB86 /* Info.plist */,
+				C61751BE1EBB86C10070CB86 /* MapperTests.swift */,
 			);
 			path = BackbaseTestAdrianaTests;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C61751C11EBB87980070CB86 /* response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +325,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C61751781EBB15690070CB86 /* BackbaseTestAdrianaTests.swift in Sources */,
+				C61751BF1EBB86C10070CB86 /* MapperTests.swift in Sources */,
+				C61751781EBB15690070CB86 /* DataManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
