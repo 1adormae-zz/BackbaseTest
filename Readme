@@ -1,0 +1,10 @@
+
+ The DataManager is a Singleton. This would be improved by declaring a protocol and make all the classes use it to access the data, but I did not have time for it.
+ I did not have time to create a proper Network Layer and neither to make it testeable or test it. I tried to split to follow the Single Responsability Pricipal as much as possible to continue the refactoring to a fully testeable Network layer.
+ I only had time to test the DataManager and the Mapper which where the most delicated in the project.
+ The architecture can be improved a lot, but I added a couple of examples of how I woudl do it if I had timeL like using dependency injection for the data Manager, MVP to be able to test the functionality that could go out of the View Controllers, etc.
+
+ I did find the time box quite limited, also because I did not remember so well how to use the Mapkit and the collectionViews.
+
+ Please contact me if you would like me to clarify anything else.
+ 
