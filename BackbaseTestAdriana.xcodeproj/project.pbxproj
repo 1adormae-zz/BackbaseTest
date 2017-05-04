@@ -19,6 +19,9 @@
 		C61751941EBB1D420070CB86 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751931EBB1D420070CB86 /* MapViewController.swift */; };
 		C61751961EBB22C30070CB86 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61751951EBB22C30070CB86 /* CoreLocation.framework */; };
 		C61751981EBB2C1A0070CB86 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751971EBB2C1A0070CB86 /* WeatherLocation.swift */; };
+		C61751A21EBB322A0070CB86 /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751A11EBB322A0070CB86 /* LocationCollectionViewCell.swift */; };
+		C61751A41EBB475B0070CB86 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751A31EBB475B0070CB86 /* WeatherDetailViewController.swift */; };
+		C61751A71EBB489B0070CB86 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751A61EBB489B0070CB86 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		C61751931EBB1D420070CB86 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C61751951EBB22C30070CB86 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C61751971EBB2C1A0070CB86 /* WeatherLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
+		C61751A11EBB322A0070CB86 /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
+		C61751A31EBB475B0070CB86 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
+		C61751A61EBB489B0070CB86 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 		C61751611EBB15690070CB86 /* BackbaseTestAdriana */ = {
 			isa = PBXGroup;
 			children = (
+				C61751A51EBB484D0070CB86 /* DataManager */,
 				C61751841EBB15A80070CB86 /* NetworkLayer */,
 				C61751831EBB158E0070CB86 /* ViewControllers */,
 				C61751821EBB157F0070CB86 /* Models */,
@@ -124,8 +131,10 @@
 		C61751831EBB158E0070CB86 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C61751A01EBB31F90070CB86 /* Cells */,
 				C61751641EBB15690070CB86 /* HomeViewController.swift */,
 				C61751931EBB1D420070CB86 /* MapViewController.swift */,
+				C61751A31EBB475B0070CB86 /* WeatherDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -146,6 +155,22 @@
 				C61751911EBB1C780070CB86 /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C61751A01EBB31F90070CB86 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C61751A11EBB322A0070CB86 /* LocationCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C61751A51EBB484D0070CB86 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C61751A61EBB489B0070CB86 /* DataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,9 +280,12 @@
 			files = (
 				C61751881EBB166D0070CB86 /* Mapper.swift in Sources */,
 				C61751981EBB2C1A0070CB86 /* WeatherLocation.swift in Sources */,
+				C61751A41EBB475B0070CB86 /* WeatherDetailViewController.swift in Sources */,
 				C61751651EBB15690070CB86 /* HomeViewController.swift in Sources */,
 				C61751861EBB162C0070CB86 /* NetworkDataProvider.swift in Sources */,
 				C61751941EBB1D420070CB86 /* MapViewController.swift in Sources */,
+				C61751A21EBB322A0070CB86 /* LocationCollectionViewCell.swift in Sources */,
+				C61751A71EBB489B0070CB86 /* DataManager.swift in Sources */,
 				C61751631EBB15690070CB86 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +496,7 @@
 				C617517E1EBB15690070CB86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C617517F1EBB15690070CB86 /* Build configuration list for PBXNativeTarget "BackbaseTestAdrianaTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +505,7 @@
 				C61751811EBB15690070CB86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

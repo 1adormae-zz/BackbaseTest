@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 protocol MapSelectedCoordinatesProtocol {
-    func selectedCoordinates(coordinates:CLLocationCoordinate2D)
+    func selectedLocation(weatherLocation:WeatherLocation)
 }
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
@@ -19,8 +19,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var manager = CLLocationManager()
     var currentCoordinate : CLLocationCoordinate2D?
+    var currentLoactionName : String?
     var currentAnnotation : MKAnnotation?
-    var mapSelectionDelegate : MapSelectedCoordinatesProtocol!
+    public var mapSelectionDelegate : MapSelectedCoordinatesProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,52 +45,58 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             
             self.currentCoordinate = newCoordinate
             
-            let location = CLLocation(latitude: newCoordinate.latitude, longitude: newCoordinate.longitude)
-            
-            var title = ""
-            
-            CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
-                
-                if error != nil {
-                    
-                    print("ERROR: Could not fin the location information")
-                    
-                } else {
-                    //Seach for the street name and the city extra info if is available
-                    if let placemark = placemarks?[0] {
-                        
-                        if placemark.subThoroughfare != nil {
-                            
-                            title += placemark.subThoroughfare! + " "
-                            
-                        }
-                        
-                        if placemark.thoroughfare != nil {
-                            
-                            title += placemark.thoroughfare! + " "
-                            
-                        }
-                    }
-                    
-                }
-                
-                if title == "" {
-                    
-                    title = "Added (\(newCoordinate.latitude), \(newCoordinate.longitude))"
-                    
-                }
-                
-                let annotation = MKPointAnnotation()
-                
-                annotation.coordinate = newCoordinate
-                
-                annotation.title = title
-                self.replaceAnnotation(annotation: annotation)
-
-            })
-            
+            self.manageNewLocationSelected(newCoordinate: newCoordinate)
         }
         
+    }
+    
+    
+    func manageNewLocationSelected(newCoordinate: CLLocationCoordinate2D ){
+        let location = CLLocation(latitude: newCoordinate.latitude, longitude: newCoordinate.longitude)
+        
+        var title = ""
+        
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
+            
+            if error != nil {
+                
+                print("ERROR: Could not fin the location information")
+                
+            } else {
+                //Seach for the street name and the city extra info if is available
+                if let placemark = placemarks?[0] {
+                    
+                    if let city = placemark.locality  {
+                        
+                        title += " \(city) "
+                        
+                    }
+                    
+                    if let country = placemark.country {
+                        
+                        title += "(\(country)) "
+                    }
+                }
+                
+            }
+            
+            if title == "" {
+                
+                title = "Added (\(newCoordinate.latitude), \(newCoordinate.longitude))"
+                
+            }
+            
+            self.currentLoactionName = title
+            
+            let annotation = MKPointAnnotation()
+            
+            annotation.coordinate = newCoordinate
+            
+            annotation.title = title
+            self.replaceAnnotation(annotation: annotation)
+            
+        })
+
     }
     
     
@@ -116,7 +123,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
   
     @IBAction func didSelecedAdd() {
         if let selectedCoordinares = self.currentCoordinate{
-            self.mapSelectionDelegate.selectedCoordinates(coordinates: selectedCoordinares)
+            let weatherLocation  = WeatherLocation(coordinates: selectedCoordinares)
+            weatherLocation.name = currentLoactionName
+            self.mapSelectionDelegate.selectedLocation(weatherLocation: weatherLocation)
         }
         self.navigationController?.popViewController(animated: true)
     }
