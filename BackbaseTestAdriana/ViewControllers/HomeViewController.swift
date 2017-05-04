@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     
     var selectedKey : String?
     @IBOutlet var locationsCollection : UICollectionView!
+    @IBOutlet var helpLabel : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,12 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.locationsCollection.reloadData()
+        if DataManager.sharedInstance.weatherLocations.keys.count == 0 {
+            self.helpLabel.isHidden = false
+        }
+        else {
+            self.helpLabel.isHidden = true
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
