@@ -10,11 +10,28 @@ import Foundation
 
 class DataManager{
     
-    var weatherLocations : [String:WeatherLocation]?
+    static let sharedInstance : DataManager = {
+        let instance = DataManager(weatherLocations: [:])
+        return instance
+    }()
     
-    func weatherLocationOf(name:String) -> WeatherLocation{
-        guard
+    var weatherLocations : [String:WeatherLocation]
+    private var dataProvider: DataProviderProtocol
+    
+    init( weatherLocations: [String:WeatherLocation]) {
+        self.weatherLocations = weatherLocations
+        self.dataProvider = NetworkDataProvider()
     }
     
-    private func retrieveweatherLocation
+    func setDataProvider (otherDataProvider: DataProviderProtocol){
+        self.dataProvider = otherDataProvider
+    }
+    
+    func weatherLocationFor(weatherLocation:WeatherLocation, completionHandler:@escaping CallBack){
+        self.dataProvider.getWeatherFor(locationWeather: weatherLocation) { result in
+            print(result ?? "EEROOORRRRR")
+            completionHandler(result)
+        }
+    }
+    
 }

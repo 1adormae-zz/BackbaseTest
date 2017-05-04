@@ -98,6 +98,7 @@
 		C61751611EBB15690070CB86 /* BackbaseTestAdriana */ = {
 			isa = PBXGroup;
 			children = (
+				C61751AA1EBB4B470070CB86 /* Resources */,
 				C61751A51EBB484D0070CB86 /* DataManager */,
 				C61751841EBB15A80070CB86 /* NetworkLayer */,
 				C61751831EBB158E0070CB86 /* ViewControllers */,
@@ -171,6 +172,13 @@
 				C61751A61EBB489B0070CB86 /* DataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C61751AA1EBB4B470070CB86 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,7 +432,6 @@
 		C617517D1EBB15690070CB86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3T2L3RT6LF;
 				INFOPLIST_FILE = BackbaseTestAdriana/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -437,7 +444,6 @@
 		C617517E1EBB15690070CB86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3T2L3RT6LF;
 				INFOPLIST_FILE = BackbaseTestAdriana/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

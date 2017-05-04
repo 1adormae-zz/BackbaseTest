@@ -10,8 +10,9 @@ import UIKit
 import CoreLocation
 
 class HomeViewController: UIViewController, MapSelectedCoordinatesProtocol {
-  
+    
     var locations : [WeatherLocation]?
+    var selectedIndex : IndexPath?
     @IBOutlet var locationsCollection : UICollectionView!
     
     override func viewDidLoad() {
@@ -19,12 +20,12 @@ class HomeViewController: UIViewController, MapSelectedCoordinatesProtocol {
         // Do any additional setup after loading the view, typically from a nib.
         locations = [WeatherLocation]()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func selectedLocation(weatherLocation:WeatherLocation){
         self.locations?.append(weatherLocation)
         self.locationsCollection.reloadData()
@@ -34,29 +35,35 @@ class HomeViewController: UIViewController, MapSelectedCoordinatesProtocol {
         if let secondViewController = segue.destination as? MapViewController {
             secondViewController.mapSelectionDelegate = self
         }
-
+        else if let secondViewController = segue.destination as? WeatherDetailViewController {
+            if let index = self.selectedIndex{
+                secondViewController.weatherLocation = locations?[index.row]
+            }
+            
+        }
+        
     }
-
+    
 }
 
 extension HomeViewController: UICollectionViewDataSource {
-
-
+    
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     func collectionView(_ collectionView: UICollectionView,
-                                 numberOfItemsInSection section: Int) -> Int {
+                        numberOfItemsInSection section: Int) -> Int {
         guard let weatherLocations = locations else {
             return 0
         }
         return weatherLocations.count
         
     }
-
+    
     func collectionView(_ collectionView: UICollectionView,
-                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LocationsCollectionViewCell",
                                                       for: indexPath) as! LocationsCollectionViewCell
         cell.titleLabel?.text = self.locations?[indexPath.row].name
@@ -67,7 +74,8 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-        
+        self.selectedIndex = indexPath
+        self.performSegue(withIdentifier: "showWeatherDetail", sender: self)
     }
 }
 
@@ -77,6 +85,6 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout{
         
         return CGSize(width: collectionView.bounds.size.width, height: 100.0)
     }
-
+    
     
 }
