@@ -9,7 +9,7 @@
 import XCTest
 @testable import BackbaseTestAdriana
 
-class BackbaseTestAdrianaTests: XCTestCase {
+class DataManagerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

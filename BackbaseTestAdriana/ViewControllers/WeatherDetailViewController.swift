@@ -22,6 +22,8 @@ class WeatherDetailViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = self.weatherLocation?.name ?? ""
+
         if let weatherLocation = weatherLocation{
             DataManager.sharedInstance.weatherLocationFor(weatherLocation: weatherLocation) { (result) in
                 if let weatherResult = result as? WeatherLocation{
@@ -31,13 +33,13 @@ class WeatherDetailViewController : UIViewController{
         }
     }
     
-    
     func fillInWith(weatherLocation:WeatherLocation){
-        self.nameLabel?.text = weatherLocation.name
-        self.tempLabel?.text = weatherLocation.temperature
-        self.humidityLabel?.text = weatherLocation.humidity
-        self.rainLabel?.text = "\(String(describing: weatherLocation.rainChance))%"
-        self.windLabel?.text = "\(String(describing: weatherLocation.windSpeed)) meter/sec"
+        
+        let temperature = "\(String(describing: weatherLocation.temperature ?? ""))\u{00B0}"
+        self.tempLabel?.text = temperature
+        self.humidityLabel?.text = weatherLocation.humidity ?? ""
+        self.rainLabel?.text = "\(String(describing: weatherLocation.rainChance ?? ""))%"
+        self.windLabel?.text = "\(String(describing: weatherLocation.windSpeed ?? "")) meter/sec"
         
     }
     

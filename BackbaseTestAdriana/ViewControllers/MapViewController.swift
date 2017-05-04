@@ -9,9 +9,6 @@
 import Foundation
 import MapKit
 
-protocol MapSelectedCoordinatesProtocol {
-    func selectedLocation(weatherLocation:WeatherLocation)
-}
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
     
@@ -21,7 +18,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var currentCoordinate : CLLocationCoordinate2D?
     var currentLoactionName : String?
     var currentAnnotation : MKAnnotation?
-    public var mapSelectionDelegate : MapSelectedCoordinatesProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,7 +121,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         if let selectedCoordinares = self.currentCoordinate{
             let weatherLocation  = WeatherLocation(coordinates: selectedCoordinares)
             weatherLocation.name = currentLoactionName
-            self.mapSelectionDelegate.selectedLocation(weatherLocation: weatherLocation)
+            DataManager.sharedInstance.addLocation(weatherLocation: weatherLocation)
         }
         self.navigationController?.popViewController(animated: true)
     }

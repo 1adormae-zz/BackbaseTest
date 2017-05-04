@@ -22,6 +22,9 @@
 		C61751A21EBB322A0070CB86 /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751A11EBB322A0070CB86 /* LocationCollectionViewCell.swift */; };
 		C61751A41EBB475B0070CB86 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751A31EBB475B0070CB86 /* WeatherDetailViewController.swift */; };
 		C61751A71EBB489B0070CB86 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751A61EBB489B0070CB86 /* DataManager.swift */; };
+		C61751AE1EBB6A950070CB86 /* ms02_example_heavy_rain_showers.png in Resources */ = {isa = PBXBuildFile; fileRef = C61751AD1EBB6A950070CB86 /* ms02_example_heavy_rain_showers.png */; };
+		C61751B71EBB75000070CB86 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61751B61EBB75000070CB86 /* HelpViewController.swift */; };
+		C61751BB1EBB75B60070CB86 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = C61751BA1EBB75B60070CB86 /* help.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		C61751A11EBB322A0070CB86 /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
 		C61751A31EBB475B0070CB86 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
 		C61751A61EBB489B0070CB86 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		C61751AD1EBB6A950070CB86 /* ms02_example_heavy_rain_showers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ms02_example_heavy_rain_showers.png; sourceTree = "<group>"; };
+		C61751B61EBB75000070CB86 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		C61751BA1EBB75B60070CB86 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,7 @@
 				C61751641EBB15690070CB86 /* HomeViewController.swift */,
 				C61751931EBB1D420070CB86 /* MapViewController.swift */,
 				C61751A31EBB475B0070CB86 /* WeatherDetailViewController.swift */,
+				C61751B61EBB75000070CB86 /* HelpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -177,6 +184,8 @@
 		C61751AA1EBB4B470070CB86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C61751BA1EBB75B60070CB86 /* help.html */,
+				C61751AD1EBB6A950070CB86 /* ms02_example_heavy_rain_showers.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -268,7 +277,9 @@
 			files = (
 				C617516D1EBB15690070CB86 /* LaunchScreen.storyboard in Resources */,
 				C617516A1EBB15690070CB86 /* Assets.xcassets in Resources */,
+				C61751AE1EBB6A950070CB86 /* ms02_example_heavy_rain_showers.png in Resources */,
 				C61751681EBB15690070CB86 /* Main.storyboard in Resources */,
+				C61751BB1EBB75B60070CB86 /* help.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +306,7 @@
 				C61751A21EBB322A0070CB86 /* LocationCollectionViewCell.swift in Sources */,
 				C61751A71EBB489B0070CB86 /* DataManager.swift in Sources */,
 				C61751631EBB15690070CB86 /* AppDelegate.swift in Sources */,
+				C61751B71EBB75000070CB86 /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

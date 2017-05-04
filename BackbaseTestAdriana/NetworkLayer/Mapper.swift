@@ -22,24 +22,24 @@ func weatherLocationMapper (json: [String:Any] ) -> WeatherLocation? {
     
     //Map Wind
     if let wind = json["wind"] as? [String:Any],
-        let speed = wind["speed"] as? String,
-        let deg = wind["deg"] as? String{
-        weatherLoc.windSpeed = speed
-        weatherLoc.windDirection = deg
+        let speed = wind["speed"] as? Double,
+        let deg = wind["deg"] as? Int{
+        weatherLoc.windSpeed = speed.description
+        weatherLoc.windDirection = deg.description
     }
     
     //Map main info
     if let main = json["main"] as? [String:Any],
-        let temp = main["temp"] as? String,
-        let humidity = main["humidity"] as? String{
-        weatherLoc.humidity = humidity
-        weatherLoc.temperature = temp
+        let temp = main["temp"] as? Int,
+        let humidity = main["humidity"] as? Int{
+        weatherLoc.humidity = humidity.description
+        weatherLoc.temperature = temp.description
     }
     
     //Map the % rain with clouds
     if let clouds = json["coulds"] as? [String:Any],
-        let chance = clouds["clouds.all"] as? String{
-        weatherLoc.rainChance = chance
+        let chance = clouds["all"] as? Int{
+        weatherLoc.rainChance = chance.description
     }
 
     

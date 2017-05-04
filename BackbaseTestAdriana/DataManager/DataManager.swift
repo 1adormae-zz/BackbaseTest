@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class DataManager{
     
     static let sharedInstance : DataManager = {
@@ -23,6 +24,16 @@ class DataManager{
         self.dataProvider = NetworkDataProvider()
     }
     
+    func addLocation(weatherLocation: WeatherLocation){
+        
+        if let name = weatherLocation.name{
+            self.weatherLocations[name] = weatherLocation
+        }
+        else{
+            print("ERROR: The new location could not be saved")
+        }
+    }
+    
     func setDataProvider (otherDataProvider: DataProviderProtocol){
         self.dataProvider = otherDataProvider
     }
@@ -31,6 +42,21 @@ class DataManager{
         self.dataProvider.getWeatherFor(locationWeather: weatherLocation) { result in
             print(result ?? "EEROOORRRRR")
             completionHandler(result)
+        }
+    }
+    
+    func saveLocations(){
+        let locationsData = NSKeyedArchiver.archivedData(withRootObject: weatherLocations.keys)
+        UserDefaults.standard.set(locationsData, forKey: "locations")
+    }
+    
+    func loadLocations(){
+        let locationsData = UserDefaults.standard.object(forKey: "locations") as? Data
+        
+        if let locationsData = locationsData {
+            let locationsArray = NSKeyedUnarchiver.unarchiveObject(with: locationsData) as? [String]
+            
+            
         }
     }
     

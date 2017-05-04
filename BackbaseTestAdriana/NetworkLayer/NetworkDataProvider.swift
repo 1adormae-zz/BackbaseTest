@@ -54,11 +54,6 @@ class NetworkDataProvider: DataProviderProtocol{
         task.resume()
     }
     
-    func getWeatherFor(coordinates:CLLocationCoordinate2D, completionHandler: @escaping CallBack){
-        
-    }
-    
-    
     
     
     private func createURL(weatherLocation:WeatherLocation) -> URL?{
