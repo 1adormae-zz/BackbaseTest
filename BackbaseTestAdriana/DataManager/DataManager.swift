@@ -46,7 +46,7 @@ class DataManager{
     }
     
     func saveLocations(){
-        let locationsData = NSKeyedArchiver.archivedData(withRootObject: weatherLocations.keys)
+        let locationsData = NSKeyedArchiver.archivedData(withRootObject: weatherLocations)
         UserDefaults.standard.set(locationsData, forKey: "locations")
     }
     
@@ -54,9 +54,7 @@ class DataManager{
         let locationsData = UserDefaults.standard.object(forKey: "locations") as? Data
         
         if let locationsData = locationsData {
-            let locationsArray = NSKeyedUnarchiver.unarchiveObject(with: locationsData) as? [String]
-            
-            
+//            self.weatherLocations = NSKeyedUnarchiver.unarchiveObject(with: locationsData) as? [String:WeatherLocation]
         }
     }
     
