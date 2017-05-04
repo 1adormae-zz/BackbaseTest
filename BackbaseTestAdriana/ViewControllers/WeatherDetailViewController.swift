@@ -13,12 +13,32 @@ import UIKit
 class WeatherDetailViewController : UIViewController{
     
     var weatherLocation:WeatherLocation?
+    @IBOutlet var nameLabel : UILabel?
+    @IBOutlet var tempLabel : UILabel?
+    @IBOutlet var humidityLabel : UILabel?
+    @IBOutlet var rainLabel : UILabel?
+    @IBOutlet var windLabel : UILabel?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        if let weatherLocation = weatherLocation{
+            DataManager.sharedInstance.weatherLocationFor(weatherLocation: weatherLocation) { (result) in
+                if let weatherResult = result as? WeatherLocation{
+                    self.fillInWith(weatherLocation: weatherResult)
+                }
+            }
+        }
+    }
+    
+    
+    func fillInWith(weatherLocation:WeatherLocation){
+        self.nameLabel?.text = weatherLocation.name
+        self.tempLabel?.text = weatherLocation.temperature
+        self.humidityLabel?.text = weatherLocation.humidity
+        self.rainLabel?.text = "\(String(describing: weatherLocation.rainChance))%"
+        self.windLabel?.text = "\(String(describing: weatherLocation.windSpeed)) meter/sec"
         
     }
-
     
 }
